@@ -174,7 +174,10 @@ const TaskBatches = () => {
                 <Icon name="Upload" size={16} />
                 Загрузить реестр
               </Button>
-              <Button className="gap-2 bg-purple-600 hover:bg-purple-700">
+              <Button
+                className="gap-2 bg-purple-600 hover:bg-purple-700"
+                onClick={() => navigate('/task-batches/new')}
+              >
                 <Icon name="Plus" size={16} />
                 Создать пачку заданий
               </Button>

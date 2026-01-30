@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import TaskBatches from "./pages/TaskBatches";
 import TaskBatchDetail from "./pages/TaskBatchDetail";
+import CreateTaskBatch from "./pages/CreateTaskBatch";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -20,6 +21,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/task-batches" element={<TaskBatches />} />
+          <Route path="/task-batches/new" element={<CreateTaskBatch />} />
           <Route path="/task-batches/:id" element={<TaskBatchDetail />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
