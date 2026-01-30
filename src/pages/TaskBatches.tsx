@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
@@ -101,6 +102,7 @@ const mockData: TaskBatch[] = [
 const ITEMS_PER_PAGE = 8;
 
 const TaskBatches = () => {
+  const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -229,7 +231,11 @@ const TaskBatches = () => {
               </thead>
               <tbody className="divide-y divide-gray-200">
                 {paginatedData.map((batch) => (
-                  <tr key={batch.id} className="hover:bg-gray-50 transition">
+                  <tr
+                    key={batch.id}
+                    className="hover:bg-gray-50 transition cursor-pointer"
+                    onClick={() => navigate(`/task-batches/${batch.id}`)}
+                  >
                     <td className="px-4 py-4 text-sm text-gray-900">{batch.id}</td>
                     <td className="px-4 py-4 text-sm text-gray-900">{batch.name}</td>
                     <td className="px-4 py-4 text-sm text-gray-900">{batch.tasksCount}</td>
