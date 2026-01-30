@@ -12,46 +12,90 @@ import {
 } from '@/components/ui/dropdown-menu';
 
 interface Task {
-  id: number;
+  id: string;
+  executor: {
+    name: string;
+    phone: string;
+  };
   title: string;
-  executor: string;
-  status: 'accepted' | 'in_progress' | 'closed' | 'act_created';
+  project: string;
+  service: string;
+  period: string;
   amount: number;
-  deadline: string;
+  status: 'completed' | 'proposed' | 'not_created';
+  act: string;
 }
 
 const mockTasks: Task[] = [
   {
-    id: 1,
-    title: 'Анализ конкурентов',
-    executor: 'Иванов И.И.',
-    status: 'closed',
-    amount: 50000,
-    deadline: '25.01.2026',
+    id: '3700372',
+    executor: {
+      name: 'Синицына Ксения',
+      phone: '+7 (999) 710-25-88',
+    },
+    title: 'Test 19-12',
+    project: 'Не указан',
+    service: 'Доставка',
+    period: '19 дек. — 21 дек.',
+    amount: 222,
+    status: 'completed',
+    act: 'Подписан',
   },
   {
-    id: 2,
-    title: 'Разработка стратегии',
-    executor: 'Петрова А.С.',
-    status: 'in_progress',
-    amount: 75000,
-    deadline: '30.01.2026',
+    id: '3700370',
+    executor: {
+      name: 'Синицына Ксения',
+      phone: '+7 (999) 710-25-88',
+    },
+    title: 'Test 19-12',
+    project: 'Не указан',
+    service: 'Доставка',
+    period: '19 дек. — 21 дек.',
+    amount: 222,
+    status: 'completed',
+    act: 'Не создан',
   },
   {
-    id: 3,
-    title: 'Аудит системы',
-    executor: 'Сидоров П.П.',
-    status: 'accepted',
-    amount: 60000,
-    deadline: '28.01.2026',
+    id: '3700357',
+    executor: {
+      name: 'Синицына Ксения',
+      phone: '+7 (999) 710-25-88',
+    },
+    title: 'Test 19-12',
+    project: 'Не указан',
+    service: 'Доставка',
+    period: '19 дек. — 21 дек.',
+    amount: 222,
+    status: 'completed',
+    act: 'Подписан',
   },
   {
-    id: 4,
-    title: 'Консультация по проекту',
-    executor: 'Козлова М.В.',
-    status: 'act_created',
-    amount: 40000,
-    deadline: '24.01.2026',
+    id: '3693596',
+    executor: {
+      name: 'Проверка Реквизитов',
+      phone: '+7 (000) 250-90-82',
+    },
+    title: 'Задание для мойки окно',
+    project: 'Новый проект',
+    service: 'Монтаж',
+    period: '22 дек. — 28 дек. 00:02 — 03:07',
+    amount: 11200,
+    status: 'proposed',
+    act: 'Не создан',
+  },
+  {
+    id: '3671874',
+    executor: {
+      name: 'Проверка Реквизитов',
+      phone: '+7 (000) 250-90-82',
+    },
+    title: '88',
+    project: 'Новый проект',
+    service: 'Доставка',
+    period: '22 дек. — 28 дек. 00:02 — 03:07',
+    amount: 1157,
+    status: 'proposed',
+    act: 'Не создан',
   },
 ];
 
@@ -87,10 +131,9 @@ const TaskBatchDetail = () => {
 
   const getStatusLabel = (status: Task['status']) => {
     const statusMap = {
-      accepted: { label: 'Принято', color: 'bg-blue-100 text-blue-700' },
-      in_progress: { label: 'В работе', color: 'bg-yellow-100 text-yellow-700' },
-      closed: { label: 'Закрыто', color: 'bg-green-100 text-green-700' },
-      act_created: { label: 'Акт сформирован', color: 'bg-purple-100 text-purple-700' },
+      completed: { label: 'Выполнено', color: 'bg-green-100 text-green-700' },
+      proposed: { label: 'Предложено', color: 'bg-orange-100 text-orange-700' },
+      not_created: { label: 'Не создан', color: 'bg-gray-100 text-gray-700' },
     };
     return statusMap[status];
   };
@@ -259,23 +302,33 @@ const TaskBatchDetail = () => {
                     />
                   </th>
                   <th className="text-left px-4 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    ID
-                  </th>
-                  <th className="text-left px-4 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Название задания
+                    №
                   </th>
                   <th className="text-left px-4 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
                     Исполнитель
                   </th>
                   <th className="text-left px-4 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Название
+                  </th>
+                  <th className="text-left px-4 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Проект
+                  </th>
+                  <th className="text-left px-4 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Услуга
+                  </th>
+                  <th className="text-left px-4 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Период
+                  </th>
+                  <th className="text-left px-4 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Стоимость
+                  </th>
+                  <th className="text-left px-4 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
                     Статус
                   </th>
                   <th className="text-left px-4 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Сумма
+                    Акт
                   </th>
-                  <th className="text-left px-4 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Срок
-                  </th>
+                  <th className="w-12"></th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200">
@@ -285,20 +338,31 @@ const TaskBatchDetail = () => {
                     <tr key={task.id} className="hover:bg-gray-50 transition">
                       <td className="px-4 py-4">
                         <Checkbox
-                          checked={selectedTasks.includes(task.id)}
-                          onCheckedChange={() => toggleTask(task.id)}
+                          checked={selectedTasks.includes(Number(task.id))}
+                          onCheckedChange={() => toggleTask(Number(task.id))}
                         />
                       </td>
-                      <td className="px-4 py-4 text-sm text-gray-900">{task.id}</td>
-                      <td className="px-4 py-4 text-sm text-gray-900">{task.title}</td>
-                      <td className="px-4 py-4 text-sm text-gray-900">{task.executor}</td>
+                      <td className="px-4 py-4 text-sm text-gray-500">{task.id}</td>
                       <td className="px-4 py-4">
-                        <Badge className={`${status.color} border-0`}>{status.label}</Badge>
+                        <div className="text-sm text-gray-900">{task.executor.name}</div>
+                        <div className="text-xs text-gray-500">{task.executor.phone}</div>
                       </td>
+                      <td className="px-4 py-4 text-sm text-gray-900">{task.title}</td>
+                      <td className="px-4 py-4 text-sm text-gray-500">{task.project}</td>
+                      <td className="px-4 py-4 text-sm text-gray-900">{task.service}</td>
+                      <td className="px-4 py-4 text-sm text-gray-900">{task.period}</td>
                       <td className="px-4 py-4 text-sm text-gray-900">
                         {task.amount.toLocaleString('ru-RU')} ₽
                       </td>
-                      <td className="px-4 py-4 text-sm text-gray-900">{task.deadline}</td>
+                      <td className="px-4 py-4">
+                        <Badge className={`${status.color} border-0`}>{status.label}</Badge>
+                      </td>
+                      <td className="px-4 py-4 text-sm text-gray-500">{task.act}</td>
+                      <td className="px-4 py-4">
+                        <Button variant="ghost" size="sm" className="h-8 w-8 p-0">
+                          <Icon name="MoreVertical" size={16} className="text-gray-400" />
+                        </Button>
+                      </td>
                     </tr>
                   );
                 })}
