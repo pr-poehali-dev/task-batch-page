@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Иконки для скачивания</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #f5f5f5;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 32px;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 16px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+        .icon-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .icon-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .icon-wrapper {
+            width: 100%;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fafafa;
+            border-radius: 6px;
+            margin-bottom: 16px;
+            overflow: hidden;
+        }
+        .icon-wrapper img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+        .icon-title {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+        .download-btn {
+            display: inline-block;
+            background: #007bff;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        .download-btn:hover {
+            background: #0056b3;
+        }
+        .download-all {
+            text-align: center;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        .download-all-btn {
+            display: inline-block;
+            background: #28a745;
+            color: white;
+            padding: 14px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        .download-all-btn:hover {
+            background: #218838;
+        }
+        .instructions {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        .instructions h2 {
+            color: #856404;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .instructions p {
+            color: #856404;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 Иконки для производства бань</h1>
+        <p class="subtitle">11 минималистичных иконок в едином стиле</p>
+        
+        <div class="instructions">
+            <h2>📥 Как скачать</h2>
+            <p>Нажмите на кнопку "Скачать" под любой иконкой, чтобы сохранить её на компьютер. Или используйте правую кнопку мыши → "Сохранить изображение как..."</p>
+        </div>
+
+        <div class="grid">
+            <div class="icon-card">
+                <div class="icon-wrapper">
+                    <img src="https://cdn.poehali.dev/projects/43065dc9-9cf1-462a-a2e4-cb8dc28744b6/files/4cc49fb8-6c27-4990-a1f2-bce5fa16a7fc.jpg" alt="Прямой производитель">
+                </div>
+                <div class="icon-title">1. Прямой производитель</div>
+                <a href="https://cdn.poehali.dev/projects/43065dc9-9cf1-462a-a2e4-cb8dc28744b6/files/4cc49fb8-6c27-4990-a1f2-bce5fa16a7fc.jpg" download="icon-1-manufacturer.jpg" class="download-btn">Скачать</a>
+            </div>
+
+            <div class="icon-card">
+                <div class="icon-wrapper">
+                    <img src="https://cdn.poehali.dev/projects/43065dc9-9cf1-462a-a2e4-cb8dc28744b6/files/cdb48857-e6f4-4bfb-8870-04f13f326c77.jpg" alt="Собственное производство">
+                </div>
+                <div class="icon-title">2. Собственное производство пиломатериала</div>
+                <a href="https://cdn.poehali.dev/projects/43065dc9-9cf1-462a-a2e4-cb8dc28744b6/files/cdb48857-e6f4-4bfb-8870-04f13f326c77.jpg" download="icon-2-lumber.jpg" class="download-btn">Скачать</a>
+            </div>
+
+            <div class="icon-card">
+                <div class="icon-wrapper">
+                    <img src="https://cdn.poehali.dev/projects/43065dc9-9cf1-462a-a2e4-cb8dc28744b6/files/28f60e79-2f5e-4e0a-bcf3-ff8d1652a65d.jpg" alt="Опыт и экспертиза">
+                </div>
+                <div class="icon-title">3. Опыт и экспертиза</div>
+                <a href="https://cdn.poehali.dev/projects/43065dc9-9cf1-462a-a2e4-cb8dc28744b6/files/28f60e79-2f5e-4e0a-bcf3-ff8d1652a65d.jpg" download="icon-3-expertise.jpg" class="download-btn">Скачать</a>
+            </div>
+
+            <div class="icon-card">
+                <div class="icon-wrapper">
+                    <img src="https://cdn.poehali.dev/projects/43065dc9-9cf1-462a-a2e4-cb8dc28744b6/files/eec4e9e5-84ff-4b7e-8de4-04afa1bbc5ae.jpg" alt="Гарантия">
+                </div>
+                <div class="icon-title">4. Гарантия</div>
+                <a href="https://cdn.poehali.dev/projects/43065dc9-9cf1-462a-a2e4-cb8dc28744b6/files/eec4e9e5-84ff-4b7e-8de4-04afa1bbc5ae.jpg" download="icon-4-warranty.jpg" class="download-btn">Скачать</a>
+            </div>
+
+            <div class="icon-card">
+                <div class="icon-wrapper">
+                    <img src="https://cdn.poehali.dev/projects/43065dc9-9cf1-462a-a2e4-cb8dc28744b6/files/08c1ba7c-eb0e-4d3d-b21c-90b3d72cbd79.jpg" alt="Доставка до двери">
+                </div>
+                <div class="icon-title">5. Доставка до двери</div>
+                <a href="https://cdn.poehali.dev/projects/43065dc9-9cf1-462a-a2e4-cb8dc28744b6/files/08c1ba7c-eb0e-4d3d-b21c-90b3d72cbd79.jpg" download="icon-5-delivery.jpg" class="download-btn">Скачать</a>
+            </div>
+
+            <div class="icon-card">
+                <div class="icon-wrapper">
+                    <img src="https://cdn.poehali.dev/projects/43065dc9-9cf1-462a-a2e4-cb8dc28744b6/files/beb0f5d0-e48e-4e8b-9a42-97ec7b8ee7d1.jpg" alt="Рассрочка без банка">
+                </div>
+                <div class="icon-title">6. Рассрочка без банка</div>
+                <a href="https://cdn.poehali.dev/projects/43065dc9-9cf1-462a-a2e4-cb8dc28744b6/files/beb0f5d0-e48e-4e8b-9a42-97ec7b8ee7d1.jpg" download="icon-6-installment.jpg" class="download-btn">Скачать</a>
+            </div>
+
+            <div class="icon-card">
+                <div class="icon-wrapper">
+                    <img src="https://cdn.poehali.dev/projects/43065dc9-9cf1-462a-a2e4-cb8dc28744b6/files/aa5e2ee7-2a77-442b-988d-e6c8e0cd43d0.jpg" alt="Индивидуальные заказы">
+                </div>
+                <div class="icon-title">7. Индивидуальные заказы</div>
+                <a href="https://cdn.poehali.dev/projects/43065dc9-9cf1-462a-a2e4-cb8dc28744b6/files/aa5e2ee7-2a77-442b-988d-e6c8e0cd43d0.jpg" download="icon-7-custom.jpg" class="download-btn">Скачать</a>
+            </div>
+
+            <div class="icon-card">
+                <div class="icon-wrapper">
+                    <img src="https://cdn.poehali.dev/projects/43065dc9-9cf1-462a-a2e4-cb8dc28744b6/files/4eaaffe0-dc5f-4d2e-8fe2-c3607c21bcf0.jpg" alt="Энергоэффективность">
+                </div>
+                <div class="icon-title">8. Энергоэффективность</div>
+                <a href="https://cdn.poehali.dev/projects/43065dc9-9cf1-462a-a2e4-cb8dc28744b6/files/4eaaffe0-dc5f-4d2e-8fe2-c3607c21bcf0.jpg" download="icon-8-energy.jpg" class="download-btn">Скачать</a>
+            </div>
+
+            <div class="icon-card">
+                <div class="icon-wrapper">
+                    <img src="https://cdn.poehali.dev/projects/43065dc9-9cf1-462a-a2e4-cb8dc28744b6/files/20faf114-cae7-480a-9ab4-b76e88ed1347.jpg" alt="Скорость возведения">
+                </div>
+                <div class="icon-title">9. Скорость возведения</div>
+                <a href="https://cdn.poehali.dev/projects/43065dc9-9cf1-462a-a2e4-cb8dc28744b6/files/20faf114-cae7-480a-9ab4-b76e88ed1347.jpg" download="icon-9-speed.jpg" class="download-btn">Скачать</a>
+            </div>
+
+            <div class="icon-card">
+                <div class="icon-wrapper">
+                    <img src="https://cdn.poehali.dev/projects/43065dc9-9cf1-462a-a2e4-cb8dc28744b6/files/c063b496-3deb-4c41-88d5-274e6f7a3d9d.jpg" alt="Всесезонность монтажа">
+                </div>
+                <div class="icon-title">10. Всесезонность монтажа</div>
+                <a href="https://cdn.poehali.dev/projects/43065dc9-9cf1-462a-a2e4-cb8dc28744b6/files/c063b496-3deb-4c41-88d5-274e6f7a3d9d.jpg" download="icon-10-allseason.jpg" class="download-btn">Скачать</a>
+            </div>
+
+            <div class="icon-card">
+                <div class="icon-wrapper">
+                    <img src="https://cdn.poehali.dev/projects/43065dc9-9cf1-462a-a2e4-cb8dc28744b6/files/fa0dce5e-93d7-4ab2-90f0-2ad945fdcf6a.jpg" alt="Готовые решения">
+                </div>
+                <div class="icon-title">11. Готовые решения</div>
+                <a href="https://cdn.poehali.dev/projects/43065dc9-9cf1-462a-a2e4-cb8dc28744b6/files/fa0dce5e-93d7-4ab2-90f0-2ad945fdcf6a.jpg" download="icon-11-solutions.jpg" class="download-btn">Скачать</a>
+            </div>
+        </div>
+
+        <div class="download-all">
+            <p style="color: #666; margin-bottom: 16px;">💡 Для массового скачивания используйте подключение к GitHub</p>
+            <a href="https://docs.poehali.dev/deploy/github" target="_blank" class="download-all-btn">Подключить GitHub</a>
+        </div>
+    </div>
+</body>
+</html>
