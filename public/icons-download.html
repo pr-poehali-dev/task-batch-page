@@ -92,30 +92,86 @@
         .download-btn:hover {
             background: #8a6a00;
         }
-        .download-all {
-            text-align: center;
-            padding: 30px;
-            background: #323232;
-            border-radius: 8px;
+        .contact-section {
+            position: relative;
+            margin-top: 60px;
+            border-radius: 12px;
+            overflow: hidden;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url('https://cdn.poehali.dev/projects/43065dc9-9cf1-462a-a2e4-cb8dc28744b6/bucket/5d09df7d-c795-4b30-a359-1fb697f26ef6.jpg');
+            background-size: cover;
+            background-position: center;
         }
-        .download-all p {
+        .contact-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(50, 50, 50, 0.85);
+        }
+        .contact-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: white;
+            max-width: 600px;
+            padding: 40px 20px;
+        }
+        .contact-content h2 {
+            font-size: 32px;
             color: #B48B00;
             margin-bottom: 16px;
-            font-weight: 600;
+            font-weight: 700;
         }
-        .download-all-btn {
-            display: inline-block;
+        .contact-subtitle {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 32px;
+            color: #e0e0e0;
+        }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .contact-form input {
+            padding: 14px 20px;
+            border: 2px solid #B48B00;
+            border-radius: 8px;
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.95);
+            color: #323232;
+            transition: all 0.2s;
+        }
+        .contact-form input:focus {
+            outline: none;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(180, 139, 0, 0.3);
+        }
+        .contact-form input::placeholder {
+            color: #666;
+        }
+        .submit-btn {
+            padding: 14px 32px;
             background: #B48B00;
             color: white;
-            padding: 14px 32px;
+            border: none;
             border-radius: 8px;
-            text-decoration: none;
             font-size: 16px;
             font-weight: 600;
-            transition: background 0.2s;
+            cursor: pointer;
+            transition: all 0.2s;
         }
-        .download-all-btn:hover {
+        .submit-btn:hover {
             background: #8a6a00;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(180, 139, 0, 0.4);
         }
         .instructions {
             background: #fff9e6;
@@ -142,7 +198,7 @@
         
         <div class="instructions">
             <h2>📥 Как скачать</h2>
-            <p>Нажмите на кнопку "Скачать" под любой иконкой, чтобы сохранить её на компьютер. Или используйте правую кнопку мыши → "Сохранить изображение как..."</p>
+            <p>Используйте правую кнопку мыши на иконке → "Сохранить изображение как..." для скачивания на компьютер.</p>
         </div>
 
         <div class="grid">
@@ -152,7 +208,6 @@
                 </div>
                 <div class="icon-title">Прямой производитель</div>
                 <p style="color: #666; font-size: 13px; line-height: 1.5; padding: 0 10px;">Работаем напрямую без посредников, что позволяет предлагать выгодные цены.</p>
-                <a href="https://cdn.poehali.dev/projects/43065dc9-9cf1-462a-a2e4-cb8dc28744b6/files/c9e155b4-a75c-41a0-abfd-305e71279171.jpg" download="icon-1-manufacturer.jpg" class="download-btn">Скачать</a>
             </div>
 
             <div class="icon-card">
@@ -161,7 +216,6 @@
                 </div>
                 <div class="icon-title">Собственное производство пиломатериала</div>
                 <p style="color: #666; font-size: 13px; line-height: 1.5; padding: 0 10px;">Контролируем качество на всех этапах, от заготовки до готового изделия.</p>
-                <a href="https://cdn.poehali.dev/projects/43065dc9-9cf1-462a-a2e4-cb8dc28744b6/files/fabcc273-1f9a-4ae2-8370-672997bd95a5.jpg" download="icon-2-lumber.jpg" class="download-btn">Скачать</a>
             </div>
 
             <div class="icon-card">
@@ -170,7 +224,6 @@
                 </div>
                 <div class="icon-title">Опыт и экспертиза</div>
                 <p style="color: #666; font-size: 13px; line-height: 1.5; padding: 0 10px;">Более 10 лет опыта в строительстве деревянных домов и бань.</p>
-                <a href="https://cdn.poehali.dev/projects/43065dc9-9cf1-462a-a2e4-cb8dc28744b6/files/03b557c0-2636-4e3c-b7a2-735283009268.jpg" download="icon-3-expertise.jpg" class="download-btn">Скачать</a>
             </div>
 
             <div class="icon-card">
@@ -179,7 +232,6 @@
                 </div>
                 <div class="icon-title">Гарантия</div>
                 <p style="color: #666; font-size: 13px; line-height: 1.5; padding: 0 10px;">Предоставляем официальную гарантию на все работы и материалы.</p>
-                <a href="https://cdn.poehali.dev/projects/43065dc9-9cf1-462a-a2e4-cb8dc28744b6/files/ad28de14-e498-4f69-891a-45e2dc737c4f.jpg" download="icon-4-warranty.jpg" class="download-btn">Скачать</a>
             </div>
 
             <div class="icon-card">
@@ -188,7 +240,6 @@
                 </div>
                 <div class="icon-title">Доставка до двери</div>
                 <p style="color: #666; font-size: 13px; line-height: 1.5; padding: 0 10px;">Доставляем материалы и конструкции на ваш участок нашим транспортом.</p>
-                <a href="https://cdn.poehali.dev/projects/43065dc9-9cf1-462a-a2e4-cb8dc28744b6/files/31c848d7-3565-4647-9b3d-1c96fff0d673.jpg" download="icon-5-delivery.jpg" class="download-btn">Скачать</a>
             </div>
 
             <div class="icon-card">
@@ -197,7 +248,6 @@
                 </div>
                 <div class="icon-title">Рассрочка без банка</div>
                 <p style="color: #666; font-size: 13px; line-height: 1.5; padding: 0 10px;">Гибкие условия оплаты напрямую от производителя без переплат.</p>
-                <a href="https://cdn.poehali.dev/projects/43065dc9-9cf1-462a-a2e4-cb8dc28744b6/files/6455ef7f-95df-42ae-894f-228f3c80f486.jpg" download="icon-6-installment.jpg" class="download-btn">Скачать</a>
             </div>
 
             <div class="icon-card">
@@ -206,7 +256,6 @@
                 </div>
                 <div class="icon-title">Индивидуальные заказы</div>
                 <p style="color: #666; font-size: 13px; line-height: 1.5; padding: 0 10px;">Разрабатываем проекты под ваши требования и особенности участка.</p>
-                <a href="https://cdn.poehali.dev/projects/43065dc9-9cf1-462a-a2e4-cb8dc28744b6/files/b0643997-0aa2-4fe3-b31f-2df7adbef50a.jpg" download="icon-7-custom.jpg" class="download-btn">Скачать</a>
             </div>
 
             <div class="icon-card">
@@ -215,7 +264,6 @@
                 </div>
                 <div class="icon-title">Энергоэффективность</div>
                 <p style="color: #666; font-size: 13px; line-height: 1.5; padding: 0 10px;">Дерево естественным образом поддерживает комфортную температуру.</p>
-                <a href="https://cdn.poehali.dev/projects/43065dc9-9cf1-462a-a2e4-cb8dc28744b6/files/b8a71580-7262-46ad-98a6-6e7601d3feda.jpg" download="icon-8-energy.jpg" class="download-btn">Скачать</a>
             </div>
 
             <div class="icon-card">
@@ -224,7 +272,6 @@
                 </div>
                 <div class="icon-title">Скорость возведения</div>
                 <p style="color: #666; font-size: 13px; line-height: 1.5; padding: 0 10px;">Монтаж готовых конструкций занимает от нескольких дней до 2-3 недель.</p>
-                <a href="https://cdn.poehali.dev/projects/43065dc9-9cf1-462a-a2e4-cb8dc28744b6/files/d00910a6-4699-45c4-b80c-1f2272c6e744.jpg" download="icon-9-speed.jpg" class="download-btn">Скачать</a>
             </div>
 
             <div class="icon-card">
@@ -233,7 +280,6 @@
                 </div>
                 <div class="icon-title">Всесезонность монтажа</div>
                 <p style="color: #666; font-size: 13px; line-height: 1.5; padding: 0 10px;">Устанавливаем бани круглый год благодаря технологии сухой сборки.</p>
-                <a href="https://cdn.poehali.dev/projects/43065dc9-9cf1-462a-a2e4-cb8dc28744b6/files/b5ec1802-cff6-4267-addc-c4aef26ce2f9.jpg" download="icon-10-allseason.jpg" class="download-btn">Скачать</a>
             </div>
 
             <div class="icon-card">
@@ -242,31 +288,20 @@
                 </div>
                 <div class="icon-title">Готовые решения</div>
                 <p style="color: #666; font-size: 13px; line-height: 1.5; padding: 0 10px;">Широкий выбор типовых проектов с проверенными решениями.</p>
-                <a href="https://cdn.poehali.dev/projects/43065dc9-9cf1-462a-a2e4-cb8dc28744b6/files/d780955f-91b4-43c4-b0fd-07a5c866f90e.jpg" download="icon-11-classic.jpg" class="download-btn">Скачать</a>
-            </div>
-
-            <div class="icon-card">
-                <div class="icon-wrapper">
-                    <img src="https://cdn.poehali.dev/projects/43065dc9-9cf1-462a-a2e4-cb8dc28744b6/files/4c958833-20ff-4d51-a39e-b32d5319a262.jpg" alt="Прямоугольные бани">
-                </div>
-                <div class="icon-title">Прямоугольные бани</div>
-                <p style="color: #666; font-size: 13px; line-height: 1.5; padding: 0 10px;">Классические прямоугольные конструкции с максимальным использованием пространства.</p>
-                <a href="https://cdn.poehali.dev/projects/43065dc9-9cf1-462a-a2e4-cb8dc28744b6/files/4c958833-20ff-4d51-a39e-b32d5319a262.jpg" download="icon-12-rectangular.jpg" class="download-btn">Скачать</a>
-            </div>
-
-            <div class="icon-card">
-                <div class="icon-wrapper">
-                    <img src="https://cdn.poehali.dev/projects/43065dc9-9cf1-462a-a2e4-cb8dc28744b6/files/47585435-6885-49d4-a7f6-f9aebbda9b22.jpg" alt="Бани-бочки">
-                </div>
-                <div class="icon-title">Бани-бочки</div>
-                <p style="color: #666; font-size: 13px; line-height: 1.5; padding: 0 10px;">Компактные бочкообразные конструкции для небольших участков.</p>
-                <a href="https://cdn.poehali.dev/projects/43065dc9-9cf1-462a-a2e4-cb8dc28744b6/files/47585435-6885-49d4-a7f6-f9aebbda9b22.jpg" download="icon-13-barrel.jpg" class="download-btn">Скачать</a>
             </div>
         </div>
 
-        <div class="download-all">
-            <p>💡 Для массового скачивания используйте подключение к GitHub</p>
-            <a href="https://docs.poehali.dev/deploy/github" target="_blank" class="download-all-btn">Подключить GitHub</a>
+        <div class="contact-section">
+            <div class="contact-overlay"></div>
+            <div class="contact-content">
+                <h2>Есть вопросы по строительству бани?</h2>
+                <p class="contact-subtitle">Оставьте свои контакты, и мы свяжемся с вами в ближайшее время для бесплатной консультации</p>
+                <form class="contact-form" id="contactForm">
+                    <input type="text" name="name" placeholder="Ваше имя" required />
+                    <input type="tel" name="phone" placeholder="Телефон" required />
+                    <button type="submit" class="submit-btn">Отправить</button>
+                </form>
+            </div>
         </div>
     </div>
 </body>
