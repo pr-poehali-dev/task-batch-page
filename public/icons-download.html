@@ -35,10 +35,30 @@
             font-weight: 600;
         }
         .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            display: flex;
+            flex-direction: column;
             gap: 24px;
             margin-bottom: 40px;
+        }
+        .grid-row {
+            display: grid;
+            gap: 24px;
+        }
+        .grid-row-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .grid-row-4 {
+            grid-template-columns: repeat(4, 1fr);
+        }
+        @media (max-width: 1024px) {
+            .grid-row-3, .grid-row-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 640px) {
+            .grid-row-3, .grid-row-4 {
+                grid-template-columns: 1fr;
+            }
         }
         .icon-card {
             border: 2px solid #B48B00;
@@ -202,92 +222,101 @@
         </div>
 
         <div class="grid">
-            <div class="icon-card">
-                <div class="icon-wrapper">
-                    <img src="https://cdn.poehali.dev/projects/43065dc9-9cf1-462a-a2e4-cb8dc28744b6/files/c9e155b4-a75c-41a0-abfd-305e71279171.jpg" alt="Прямой производитель">
+            <!-- Первая строка: 3 иконки -->
+            <div class="grid-row grid-row-3">
+                <div class="icon-card">
+                    <div class="icon-wrapper">
+                        <img src="https://cdn.poehali.dev/projects/43065dc9-9cf1-462a-a2e4-cb8dc28744b6/files/c9e155b4-a75c-41a0-abfd-305e71279171.jpg" alt="Прямой производитель">
+                    </div>
+                    <div class="icon-title">Мы — производители</div>
+                    <p style="color: #666; font-size: 13px; line-height: 1.5; padding: 0 10px;">Это значит, что у нас нет посредников, а у вас — их наценок. Вы общаетесь напрямую с теми, кто будет создавать вашу баню.</p>
                 </div>
-                <div class="icon-title">Мы — производители</div>
-                <p style="color: #666; font-size: 13px; line-height: 1.5; padding: 0 10px;">Это значит, что у нас нет посредников, а у вас — их наценок. Вы общаетесь напрямую с теми, кто будет создавать вашу баню.</p>
+
+                <div class="icon-card">
+                    <div class="icon-wrapper">
+                        <img src="https://cdn.poehali.dev/projects/43065dc9-9cf1-462a-a2e4-cb8dc28744b6/files/fabcc273-1f9a-4ae2-8370-672997bd95a5.jpg" alt="Собственное производство">
+                    </div>
+                    <div class="icon-title">Собственное производство пиломатериала</div>
+                    <p style="color: #666; font-size: 13px; line-height: 1.5; padding: 0 10px;">Мы отбираем лучшее сырьё и сами сушим, обрабатываем и нарезаем древесину. Это гарантия идеальной геометрии, прочности и долговечности каждой детали. Мы отвечаем за качество с самого начала.</p>
+                </div>
+
+                <div class="icon-card">
+                    <div class="icon-wrapper">
+                        <img src="https://cdn.poehali.dev/projects/43065dc9-9cf1-462a-a2e4-cb8dc28744b6/files/03b557c0-2636-4e3c-b7a2-735283009268.jpg" alt="Опыт и экспертиза">
+                    </div>
+                    <div class="icon-title">Опыт и экспертиза</div>
+                    <p style="color: #666; font-size: 13px; line-height: 1.5; padding: 0 10px;">Наши инженеры и плотники знают, как построить баню, которая будет служить десятилетиями: не перекосятся стены, не просядет утеплитель, а пар будет лёгким и правильным.</p>
+                </div>
             </div>
 
-            <div class="icon-card">
-                <div class="icon-wrapper">
-                    <img src="https://cdn.poehali.dev/projects/43065dc9-9cf1-462a-a2e4-cb8dc28744b6/files/fabcc273-1f9a-4ae2-8370-672997bd95a5.jpg" alt="Собственное производство">
+            <!-- Вторая строка: 4 иконки -->
+            <div class="grid-row grid-row-4">
+                <div class="icon-card">
+                    <div class="icon-wrapper">
+                        <img src="https://cdn.poehali.dev/projects/43065dc9-9cf1-462a-a2e4-cb8dc28744b6/files/ad28de14-e498-4f69-891a-45e2dc737c4f.jpg" alt="Гарантия">
+                    </div>
+                    <div class="icon-title">Гарантия на все конструкции и материалы</div>
+                    <p style="color: #666; font-size: 13px; line-height: 1.5; padding: 0 10px;">Ваш покой и уверенность — наш главный приоритет.</p>
                 </div>
-                <div class="icon-title">Собственное производство пиломатериала</div>
-                <p style="color: #666; font-size: 13px; line-height: 1.5; padding: 0 10px;">Мы отбираем лучшее сырьё и сами сушим, обрабатываем и нарезаем древесину. Это гарантия идеальной геометрии, прочности и долговечности каждой детали. Мы отвечаем за качество с самого начала.</p>
+
+                <div class="icon-card">
+                    <div class="icon-wrapper">
+                        <img src="https://cdn.poehali.dev/projects/43065dc9-9cf1-462a-a2e4-cb8dc28744b6/files/31c848d7-3565-4647-9b3d-1c96fff0d673.jpg" alt="Доставка до двери">
+                    </div>
+                    <div class="icon-title">Доставка «до двери» в любой регион России</div>
+                    <p style="color: #666; font-size: 13px; line-height: 1.5; padding: 0 10px;">Мы берём на себя все заботы по логистике.</p>
+                </div>
+
+                <div class="icon-card">
+                    <div class="icon-wrapper">
+                        <img src="https://cdn.poehali.dev/projects/43065dc9-9cf1-462a-a2e4-cb8dc28744b6/files/6455ef7f-95df-42ae-894f-228f3c80f486.jpg" alt="Рассрочка без банка">
+                    </div>
+                    <div class="icon-title">Рассрочка без банка и переплат</div>
+                    <p style="color: #666; font-size: 13px; line-height: 1.5; padding: 0 10px;">Хотите баню сейчас, а платить постепенно? У нас это возможно напрямую, без скрытых процентов и сложных оформлений.</p>
+                </div>
+
+                <div class="icon-card">
+                    <div class="icon-wrapper">
+                        <img src="https://cdn.poehali.dev/projects/43065dc9-9cf1-462a-a2e4-cb8dc28744b6/files/b0643997-0aa2-4fe3-b31f-2df7adbef50a.jpg" alt="Индивидуальные заказы">
+                    </div>
+                    <div class="icon-title">Индивидуальные заказы — наша специализация</div>
+                    <p style="color: #666; font-size: 13px; line-height: 1.5; padding: 0 10px;">Не нашли подходящий проект в наличии? Мы спроектируем и построим баню вашей мечты по вашим эскизам: нестандартная планировка, конкретный размер, особый дизайн.</p>
+                </div>
             </div>
 
-            <div class="icon-card">
-                <div class="icon-wrapper">
-                    <img src="https://cdn.poehali.dev/projects/43065dc9-9cf1-462a-a2e4-cb8dc28744b6/files/03b557c0-2636-4e3c-b7a2-735283009268.jpg" alt="Опыт и экспертиза">
+            <!-- Третья строка: 4 иконки -->
+            <div class="grid-row grid-row-4">
+                <div class="icon-card">
+                    <div class="icon-wrapper">
+                        <img src="https://cdn.poehali.dev/projects/43065dc9-9cf1-462a-a2e4-cb8dc28744b6/files/b8a71580-7262-46ad-98a6-6e7601d3feda.jpg" alt="Энергоэффективность">
+                    </div>
+                    <div class="icon-title">Энергоэффективность</div>
+                    <p style="color: #666; font-size: 13px; line-height: 1.5; padding: 0 10px;">Тёплые зимой, не жаркие летом. Экономьте на прогреве.</p>
                 </div>
-                <div class="icon-title">Опыт и экспертиза</div>
-                <p style="color: #666; font-size: 13px; line-height: 1.5; padding: 0 10px;">Наши инженеры и плотники знают, как построить баню, которая будет служить десятилетиями: не перекосятся стены, не просядет утеплитель, а пар будет лёгким и правильным.</p>
-            </div>
 
-            <div class="icon-card">
-                <div class="icon-wrapper">
-                    <img src="https://cdn.poehali.dev/projects/43065dc9-9cf1-462a-a2e4-cb8dc28744b6/files/ad28de14-e498-4f69-891a-45e2dc737c4f.jpg" alt="Гарантия">
+                <div class="icon-card">
+                    <div class="icon-wrapper">
+                        <img src="https://cdn.poehali.dev/projects/43065dc9-9cf1-462a-a2e4-cb8dc28744b6/files/d00910a6-4699-45c4-b80c-1f2272c6e744.jpg" alt="Скорость возведения">
+                    </div>
+                    <div class="icon-title">Скорость возведения</div>
+                    <p style="color: #666; font-size: 13px; line-height: 1.5; padding: 0 10px;">Готовый комплект монтируется на вашем фундаменте за несколько дней.</p>
                 </div>
-                <div class="icon-title">Гарантия на все конструкции и материалы</div>
-                <p style="color: #666; font-size: 13px; line-height: 1.5; padding: 0 10px;">Ваш покой и уверенность — наш главный приоритет.</p>
-            </div>
 
-            <div class="icon-card">
-                <div class="icon-wrapper">
-                    <img src="https://cdn.poehali.dev/projects/43065dc9-9cf1-462a-a2e4-cb8dc28744b6/files/31c848d7-3565-4647-9b3d-1c96fff0d673.jpg" alt="Доставка до двери">
+                <div class="icon-card">
+                    <div class="icon-wrapper">
+                        <img src="https://cdn.poehali.dev/projects/43065dc9-9cf1-462a-a2e4-cb8dc28744b6/files/b5ec1802-cff6-4267-addc-c4aef26ce2f9.jpg" alt="Всесезонность монтажа">
+                    </div>
+                    <div class="icon-title">Всесезонность монтажа</div>
+                    <p style="color: #666; font-size: 13px; line-height: 1.5; padding: 0 10px;">Строить можно в любое время года.</p>
                 </div>
-                <div class="icon-title">Доставка «до двери» в любой регион России</div>
-                <p style="color: #666; font-size: 13px; line-height: 1.5; padding: 0 10px;">Мы берём на себя все заботы по логистике.</p>
-            </div>
 
-            <div class="icon-card">
-                <div class="icon-wrapper">
-                    <img src="https://cdn.poehali.dev/projects/43065dc9-9cf1-462a-a2e4-cb8dc28744b6/files/6455ef7f-95df-42ae-894f-228f3c80f486.jpg" alt="Рассрочка без банка">
+                <div class="icon-card">
+                    <div class="icon-wrapper">
+                        <img src="https://cdn.poehali.dev/projects/43065dc9-9cf1-462a-a2e4-cb8dc28744b6/files/d780955f-91b4-43c4-b0fd-07a5c866f90e.jpg" alt="Готовые решения">
+                    </div>
+                    <div class="icon-title">Готовые решения и эксклюзив</div>
+                    <p style="color: #666; font-size: 13px; line-height: 1.5; padding: 0 10px;">Большой выбор типовых проектов и полная свобода для индивидуального заказа.</p>
                 </div>
-                <div class="icon-title">Рассрочка без банка и переплат</div>
-                <p style="color: #666; font-size: 13px; line-height: 1.5; padding: 0 10px;">Хотите баню сейчас, а платить постепенно? У нас это возможно напрямую, без скрытых процентов и сложных оформлений.</p>
-            </div>
-
-            <div class="icon-card">
-                <div class="icon-wrapper">
-                    <img src="https://cdn.poehali.dev/projects/43065dc9-9cf1-462a-a2e4-cb8dc28744b6/files/b0643997-0aa2-4fe3-b31f-2df7adbef50a.jpg" alt="Индивидуальные заказы">
-                </div>
-                <div class="icon-title">Индивидуальные заказы — наша специализация</div>
-                <p style="color: #666; font-size: 13px; line-height: 1.5; padding: 0 10px;">Не нашли подходящий проект в наличии? Мы спроектируем и построим баню вашей мечты по вашим эскизам: нестандартная планировка, конкретный размер, особый дизайн.</p>
-            </div>
-
-            <div class="icon-card">
-                <div class="icon-wrapper">
-                    <img src="https://cdn.poehali.dev/projects/43065dc9-9cf1-462a-a2e4-cb8dc28744b6/files/b8a71580-7262-46ad-98a6-6e7601d3feda.jpg" alt="Энергоэффективность">
-                </div>
-                <div class="icon-title">Энергоэффективность</div>
-                <p style="color: #666; font-size: 13px; line-height: 1.5; padding: 0 10px;">Тёплые зимой, не жаркие летом. Экономьте на прогреве.</p>
-            </div>
-
-            <div class="icon-card">
-                <div class="icon-wrapper">
-                    <img src="https://cdn.poehali.dev/projects/43065dc9-9cf1-462a-a2e4-cb8dc28744b6/files/d00910a6-4699-45c4-b80c-1f2272c6e744.jpg" alt="Скорость возведения">
-                </div>
-                <div class="icon-title">Скорость возведения</div>
-                <p style="color: #666; font-size: 13px; line-height: 1.5; padding: 0 10px;">Готовый комплект монтируется на вашем фундаменте за несколько дней.</p>
-            </div>
-
-            <div class="icon-card">
-                <div class="icon-wrapper">
-                    <img src="https://cdn.poehali.dev/projects/43065dc9-9cf1-462a-a2e4-cb8dc28744b6/files/b5ec1802-cff6-4267-addc-c4aef26ce2f9.jpg" alt="Всесезонность монтажа">
-                </div>
-                <div class="icon-title">Всесезонность монтажа</div>
-                <p style="color: #666; font-size: 13px; line-height: 1.5; padding: 0 10px;">Строить можно в любое время года.</p>
-            </div>
-
-            <div class="icon-card">
-                <div class="icon-wrapper">
-                    <img src="https://cdn.poehali.dev/projects/43065dc9-9cf1-462a-a2e4-cb8dc28744b6/files/d780955f-91b4-43c4-b0fd-07a5c866f90e.jpg" alt="Готовые решения">
-                </div>
-                <div class="icon-title">Готовые решения и эксклюзив</div>
-                <p style="color: #666; font-size: 13px; line-height: 1.5; padding: 0 10px;">Большой выбор типовых проектов и полная свобода для индивидуального заказа.</p>
             </div>
         </div>
 
